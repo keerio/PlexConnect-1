@@ -26,7 +26,7 @@
               {{COPY(Directory)}}
               <title>{{VAL(title)}}</title>
               <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
-              <image>{{URL(:/thumbnails/Plex/images/icons/Folder.png)}}</image>
+              <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
             </moviePoster>
 
@@ -75,11 +75,11 @@
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=HomeVideo_ByFolder)}}')">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
-                <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                 <defaultImage>resource://Poster.png</defaultImage>
                 <preview>
                   <crossFadePreview>
-                    <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                    <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                   </crossFadePreview>
                 </preview>
               </twoLineEnhancedMenuItem>
@@ -137,11 +137,11 @@
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=HomeVideo_ByFolder)}}')">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
-                <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                 <defaultImage>resource://Poster.png</defaultImage>
                 <preview>
                   <crossFadePreview>
-                    <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                    <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                   </crossFadePreview>
                 </preview>
               </twoLineEnhancedMenuItem>
@@ -182,4 +182,4 @@
       </menu>
     </itemCollectionWithImageHeader>
   </body>{{CUT($homevideoview::Detailed=|Grid=CUT|List=CUT)}}
-</atv>
+  </atv>

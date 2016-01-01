@@ -26,11 +26,11 @@
               {{COPY(Directory)}}
               <title>{{VAL(title)}}</title>
               <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
-              <image>{{URL(:/thumbnails/Plex/images/icons/Folder.png)}}</image>
+              <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
             </moviePoster>
 
-            <sixteenByNinePoster id="{{VAL(key)}}" alwaysShowTitles="{{VAL($postertitles::Highlighted Only=false|Show All=true)}}"
+            <moviePoster id="{{VAL(key)}}" alwaysShowTitles="{{VAL($postertitles::Highlighted Only=false|Show All=true)}}"
                              onPlay="atv.loadURL('{{URL(key:::PlexConnect=Play_Video&amp;PlexConnectRatingKey={{VAL(ratingKey)}})}}')"
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=HomeVideo_PrePlay)}}')">
               {{COPY(Video)}}
@@ -38,7 +38,7 @@
               <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
               <image>{{IMAGEURL(thumb::384)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
-            </sixteenByNinePoster>
+            </moviePoster>
           </items>
         </grid>
       </items>
@@ -47,13 +47,19 @@
 
 
 <body>
-    <listWithPreview id="HomeVideoList">
-      <header>
-        <simpleHeader>
-          <title>{{VAL(title1)}}</title>
-          <subtitle>{{VAL(title2)}}</subtitle>
-        </simpleHeader>
-      </header>
+  <itemCollectionWithImageHeader id="HomeVideoList">
+    <header>
+    <imageHeader>
+      <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=552|1080=828)}}, 0" required="true">
+             {{URL(:/fanartcache/{{getBackground({{EVAL({\
+            'title'       : "{{EVAL(quote_plus("{{VAL(title1)}}"))}}",\
+            'subtitle'    : "{{EVAL(quote_plus("{{VAL(title2)}}"))}}",\
+            'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
+            'layers'      : ["PlexSubList"]\
+            })}})}})}}
+      </image>
+    </imageHeader>
+    </header>
 
       <menu>
         <sections>
@@ -64,11 +70,11 @@
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=HomeVideo_ByFolder)}}')">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
-                <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                 <defaultImage>resource://Poster.png</defaultImage>
                 <preview>
                   <crossFadePreview>
-                    <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                    <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                   </crossFadePreview>
                 </preview>
               </twoLineEnhancedMenuItem>
@@ -94,16 +100,22 @@
           </menuSection>
         </sections>
       </menu>
-    </listWithPreview>
+    </itemCollectionWithImageHeader>
   </body>{{CUT($homevideoview::Detailed=CUT|Grid=CUT|List=)}}
 
   <body>
-    <listWithPreview id="HomeVideo_DetailedList">
+    <itemCollectionWithImageHeader id="HomeVideo_DetailedList">
       <header>
-        <simpleHeader>
-          <title>{{VAL(title1)}}</title>
-          <subtitle>{{VAL(title2)}}</subtitle>
-        </simpleHeader>
+	    <imageHeader>
+	      <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=552|1080=828)}}, 0" required="true">
+	      {{URL(:/fanartcache/{{getBackground({{EVAL({\
+              'title'       : "{{EVAL(quote_plus("{{VAL(title1)}}"))}}",\
+              'subtitle'    : "{{EVAL(quote_plus("{{VAL(title2)}}"))}}",\
+              'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
+              'layers'      : ["PlexSubList"]\
+              })}})}})}}
+	      </image>
+	    </imageHeader>
       </header>
 
       <menu>
@@ -115,11 +127,11 @@
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=HomeVideo_ByFolder)}}')">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
-                <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                 <defaultImage>resource://Poster.png</defaultImage>
                 <preview>
                   <crossFadePreview>
-                    <image>{{URL(:/thumbnails/Folder.png)}}</image>
+                    <image>{{URL(:/thumbnails/Images/Icons/Folder.png)}}</image>
                   </crossFadePreview>
                 </preview>
               </twoLineEnhancedMenuItem>
@@ -158,6 +170,13 @@
           </menuSection>
         </sections>
       </menu>
-    </listWithPreview>
-  </body>{{CUT($homevideoview::Detailed=|Grid=CUT|List=CUT)}}
+    </itemCollectionWithImageHeader>{{CUT($homevideoview::Detailed=|Grid=CUT|List=CUT)}}
+    
+    <!--No Items Available-->
+    <dialog id="com.sample.error-dialog">
+    {{CUT(size::0=|1=CUT)}}
+      <title>PlexConnect</title>
+      <description>{{TEXT(Plex Media Server: No Items Available)}}</description>
+    </dialog>
+  </body>
 </atv>

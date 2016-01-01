@@ -44,11 +44,11 @@
         </grid>
       </items>
     </scroller>
-  </body>{{CUT($movieview::Artwork=|Detailed=CUT|List=CUT)}}
+  </body>{{CUT($movieview::Grid=|Detailed=CUT|List=CUT)}}
 
 
 <body>
-    <listWithPreview id="HomeVideoList">
+    <itemCollectionWithImageHeader id="HomeVideoList">
       <header>
 	    <imageHeader>
 	      <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=552|1080=828)}}, 0" required="true">
@@ -101,11 +101,11 @@
           </menuSection>
         </sections>
       </menu>
-    </listWithPreview>
-  </body>{{CUT($movieview::Detailed=CUT|List=|Artwork=CUT)}}
+    </itemCollectionWithImageHeader>
+  </body>{{CUT($movieview::Detailed=CUT|List=|Grid=CUT)}}
 
   <body>
-    <listWithPreview id="HomeVideo_DetailedList">
+    <itemCollectionWithImageHeader id="HomeVideo_DetailedList">
       <header>
 	    <imageHeader>
 	      <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=552|1080=828)}}, 0" required="true">
@@ -171,6 +171,6 @@
           </menuSection>
         </sections>
       </menu>
-    </listWithPreview>
-  </body>{{CUT($movieview::Detailed=|List=CUT|Artwork=CUT)}}
+    </itemCollectionWithImageHeader>
+  </body>{{CUT($movieview::Detailed=|List=CUT|Grid=CUT)}}
 </atv>

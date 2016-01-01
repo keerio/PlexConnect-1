@@ -74,7 +74,7 @@ class ImageBackground():
     def getRendersize(self, res):
         if str(res)=="poster":
             renderwidth = 512
-            renderheight = 768
+            renderheight = 271
         elif str(res)=="16X9":
             renderwidth = 768
             renderheight = 432
@@ -82,8 +82,8 @@ class ImageBackground():
             renderwidth = 771
             renderheight= 282
         elif str(res)=="square":
-            renderwidth = 768
-            renderheight = 768
+            renderwidth = 600
+            renderheight = 318
         else:
             renderwidth = 1280
             renderheight = 720
@@ -156,7 +156,7 @@ class ImageBackground():
         layerrange = range(0, len(self.cfg['layers']))
         for layercounter in layerrange:
             if self.cfg['layers'][layercounter] != None:
-                layer = Image.open(stylepath+"/Graphics/Layers/"+self.cfg['layers'][layercounter]+".png")
+                layer = Image.open(stylepath+"/Images/Layers/"+self.cfg['layers'][layercounter]+".png")
                 layer = layer.resize((width, height), Image.ANTIALIAS)
                 im.paste(layer, ( 0, 0),layer)
 
@@ -266,15 +266,15 @@ class ImageBackground():
             dprint(__name__, 1, 'No Cachefile found. Generating Background.')  # Debug
             # Setup Background
             url = urllib.unquote(self.cfg['image'])
-            if os.path.isfile(stylepath+"/Graphics/"+url):
+            if os.path.isfile(stylepath+"/Images/"+url):
                 dprint(__name__, 1, 'Fetching Template Image.'  )  # Debug
-                background = Image.open(stylepath+"/Graphics/"+url)
+                background = Image.open(stylepath+"/Images/"+url)
             elif url[0][0] != "/":
                 try:
                     bgfile = urllib2.urlopen(url)
                 except urllib2.URLError, e:
                     dprint(__name__, 1, 'error: {0}', str(e.code)+" "+e.msg+" // url:"+ url )  # Debug
-                    background = Image.open(stylepath+"/Graphics/Layers/Blank.png")
+                    background = Image.open(stylepath+"/Images/Layers/Blank.png")
                 else:
                     dprint(__name__, 1, 'Fetting Remote Image.')  # Debug
                     output = open(cachepath+"/tmp.png",'wb')
@@ -334,13 +334,13 @@ def generate(PMS_uuid, url, authtoken, resolution, blurRadius, gradientTemplate,
         background = Image.open(io.BytesIO(response))
     except urllib2.URLError as e:
         dprint(__name__, 0, 'URLError: {0} // url: {1}', e.reason, url)
-        return "/thumbnails/Graphics/Layers/Blank.png"
+        return "/thumbnails/Images/Layers/Blank.png"
     except urllib2.HTTPError as e:
         dprint(__name__, 0, 'HTTPError: {0} {1} // url: {2}', str(e.code), e.msg, url)
-        return "/thumbnails/Graphics/Layers/Blank.png"
+        return "/thumbnails/Images/Layers/Blank.png"
     except IOError as e:
         dprint(__name__, 0, 'IOError: {0} // url: {1}', str(e), url)
-        return "/thumbnails/Graphics/Layers/Blank.png"
+        return "/thumbnails/Images/Layers/Blank.png"
 
     blurRadius = int(blurRadius)
 
@@ -353,7 +353,7 @@ def generate(PMS_uuid, url, authtoken, resolution, blurRadius, gradientTemplate,
         blurEnd = (1080/100) * int(blurEnd)
         blurRegion = (0, blurStart, 1920, blurEnd)
         # FT: get Background based on last Parameter
-        layer = Image.open(stylepath + "/Graphics/Layers/PlexOverview.png")
+        layer = Image.open(stylepath + "/Images/Layers/PlexOverview.png")
     else:
         width = 1280
         height = 720
@@ -361,7 +361,7 @@ def generate(PMS_uuid, url, authtoken, resolution, blurRadius, gradientTemplate,
         blurEnd = (720/100) * int(blurEnd)
         blurRegion = (0, blurStart, 1280, blurEnd)
         blurRadius = int(blurRadius / 1.5)
-        layer = Image.open(stylepath + "/Graphics/Layers/PlexOverview.png")
+        layer = Image.open(stylepath + "/Images/Layers/PlexOverview.png")
 
     # Set background resolution and merge layers
     try:
@@ -383,7 +383,7 @@ def generate(PMS_uuid, url, authtoken, resolution, blurRadius, gradientTemplate,
 
     except:
         dprint(__name__, 0, 'Error - Failed to modify image')
-        return "/thumbnails/Graphics/Layers/Blank.png"
+        return "/thumbnails/Images/Layers/Blank.png"
 
     background = textToImage(stylepath, background, resolution, titleText, titleSize, textColor, align, valign, offsetx, offsety)
 
@@ -411,7 +411,7 @@ def generate(PMS_uuid, url, authtoken, resolution, blurRadius, gradientTemplate,
         background.save(cachepath+"/"+cachefile)
     except:
         dprint(__name__, 0, 'Error - Failed to save image file')
-        return "/thumbnails/Graphics/Layers/Blank.png"
+        return "/thumbnails/Images/Layers/Blank.png"
 
     dprint(__name__, 1, 'Cachefile  generated.')  # Debug
     return "/fanartcache/"+cachefile

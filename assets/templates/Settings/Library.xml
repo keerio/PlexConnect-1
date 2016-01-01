@@ -40,7 +40,7 @@
             <label>https://github.com/ibaa/plexconnect</label>
             <label>http://forums.plexapp.com/...plexconnect</label>
           </metadataValues>
-          <image>{{URL(:/thumbnails/Graphics/Logo/PlexConnectLogo.png)}}</image>
+          <image>{{URL(:/thumbnails/Images/Logo/PlexConnectLogo.png)}}</image>
         </keyedPreview>
       </preview>
 
@@ -53,9 +53,13 @@
               </horizontalDivider>
             </header>
             <items>
+              <oneLineMenuItem id="SectionView" onSelect="toggleSettings('SectionView', 'Settings_Library')">
+                <label>{{TEXT(Section View)}}</label>
+                <rightLabel>{{SETTING(sectionview)}}</rightLabel>
+              </oneLineMenuItem>
 
               <oneLineMenuItem id="SectionIcons" onSelect="toggleSettings('SectionIcons', 'Settings_Library')">
-                <label>{{TEXT(Library Icons)}}</label>
+                <label>{{TEXT(Section Icons)}}</label>
                 <rightLabel>{{SETTING(sectionicons)}}</rightLabel>
               </oneLineMenuItem>
               </items>

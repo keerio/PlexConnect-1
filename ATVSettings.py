@@ -25,6 +25,7 @@ options = { \
     'moviepreplay_bottomshelf'          :('Extras', 'Related Movies'), \
     'seasonview'                        :('Coverflow', 'List'), \
     'sectionicons'                      :('Basic','Plex', 'Fanart', 'Custom'), \
+    'sectionview'                       :('Grid', 'Flow'), \
     'library_ondeck'                    :('Show', 'Hide'), \
     'library_recentlyadded'             :('Show', 'Hide'), \
     'actorview'                         :('Movies', 'Portrait'), \
