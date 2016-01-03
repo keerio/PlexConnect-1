@@ -22,8 +22,8 @@
 
 /assets/fanartcache/*.png
 
-/assets/thumbnails/Plex/Images/Icons/flow/custom/*.png
+/assets/thumbnails/Images/Icons/flow/custom/*.png
 
-/assets/thumbnails/Plex/Images/Icons/grid/custom/*.png
+/assets/thumbnails/Images/Icons/grid/custom/*.png
 
 /assets/fanartcache/tmp.png
