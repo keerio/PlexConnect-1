@@ -13,7 +13,7 @@
 	    <imageHeader>
 	      <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=552|1080=828)}}, 0" required="true">
 	    {{URL(:/fanartcache/{{getBackground({{EVAL({\
-              'title'       : "{{EVAL(quote_plus("{{TEXT(Plex PlayLists)}}"))}}",\
+              'title'       : "{{EVAL(quote_plus("{{TEXT(Plex Playlists)}}"))}}",\
               'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
               'layers'      : ["PlexList"]\
               })}})}})}}

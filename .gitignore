@@ -23,3 +23,5 @@ PlexConnect.log
 /assets/fanartcache/*.png
 
 assets/thumbnails/Plex/images/custom/flow/*.png
+
+assets/fanartcache/tmp.png
