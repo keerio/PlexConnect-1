@@ -50,7 +50,7 @@
               {{VAR(sections:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
               <title>{{VAL(title)}}</title>
               <subtitle>&#x00AD;</subtitle><!--bugfix to prevent different poster sizes-->
-              <image>{{URL(:/thumbnails/Images/Icons/discover/{{VAL(type)}}.png)}}</image>
+              <image>{{URL(:/thumbnails/Images/Icons/discover/{{VAL(type)}}_plex.png)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
               </moviePoster>
               </items>
