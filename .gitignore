@@ -4,7 +4,7 @@
 
 /Settings.cfg
 
-PlexConnect.log
+/PlexConnect.log
 
 *.cer
 
@@ -22,6 +22,8 @@ PlexConnect.log
 
 /assets/fanartcache/*.png
 
-assets/thumbnails/Plex/images/custom/flow/*.png
+/assets/thumbnails/Plex/Images/Icons/flow/custom/*.png
 
-assets/fanartcache/tmp.png
+/assets/thumbnails/Plex/Images/Icons/grid/custom/*.png
+
+/assets/fanartcache/tmp.png
