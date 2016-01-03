@@ -50,7 +50,7 @@
              <image>
                   {{URL(:/fanartcache/{{getBackground({{EVAL({\
                   'title'       : "{{VAL(title)}}",\
-                  'image'       : "{{VAL($sectionicons::Plex=Icons/flow/{{VAL(type)}}-flow-plex.png|Basic=Icons/flow/{{VAL(type)}}-flow.png|Fanart=Icons/flow/{{VAL(type)}}-flow-fanart.png|Custom=Icons/custom/flow/{{EVAL("{{VAL(title)}}".replace(' ', ''))}}-flow.png)}}",\
+                  'image'       : "{{VAL($sectionicons::Plex=Icons/flow/{{VAL(type)}}-flow-plex.png|Basic=Icons/flow/{{VAL(type)}}-flow.png|Fanart=Icons/flow/{{VAL(type)}}-flow-fanart.png|Custom=Icons//flow/custom/{{EVAL("{{VAL(title)}}".replace(' ', ''))}}-flow.png)}}",\
                   'resolution'  : "flow",\
                   'titleSize'   : "40",\
                   'anchorX'     : "center",\
@@ -91,7 +91,7 @@
                     <image>{{URL(:/thumbnails/Images/Icons/grid/{{VAL(type)}}.png)}}</image>{{CUT($sectionicons::Basic=|Plex=CUT|Fanart=CUT|Custom=CUT)}}
                     <image>{{IMAGEURL(thumb::768)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=|Fanart=CUT|Custom=CUT)}}
                     <image>{{URL(:/thumbnails/Images/Icons/grid/{{VAL(type)}}_plex.png)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=|Custom=CUT)}}
-                    <image>{{URL(:/thumbnails/Images/Icons/custom/grid/{{VAL(title)}}".replace(' ', ''))}}.png)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=|Custom=)}}
+                    <image>{{URL(:/thumbnails/Images/Icons//grid/custom/{{VAL(title)}}".replace(' ', ''))}}.png)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=|Custom=)}}
                     <defaultImage>resource://{{VAL($sectionicons::Plex=Square|Basic=16X9|Fanart=16X9|Custom=16X9)}}.png</defaultImage>
                   </moviePoster>
                 </items>
