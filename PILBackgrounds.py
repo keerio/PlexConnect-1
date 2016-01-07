@@ -501,11 +501,6 @@ def textToImage(stylepath, im, resolution, textToWrite, fontsize, color, align, 
     return im
 
 
-
-def fullHDtext(number):
-    number = int(number)*1080/720
-    return number
-
 def is_hex(s):
     hex_digits = set("0123456789abcdefABCDEF")
     for char in s:

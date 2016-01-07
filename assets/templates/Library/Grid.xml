@@ -130,10 +130,6 @@
           </grid>{{CUT($sectionview::Grid=|Flow=)}}{{CUT($library_ondeck::Show=CUT|Hide=)}}{{CUT($library_recentlyadded::Show=CUT|Hide=)}}
         </__COPY__>
 
-        <collectionDivider alignment="left" accessibilityLabel="Library">
-        <title></title>
-      </collectionDivider>{{CUT($sectionview::Grid=|Flow=CUT)}}
-
       <!--On Deck-->
       <__COPY__>
       {{COPY(@OnDeck/Server:size::0=|1=COPY)}}
