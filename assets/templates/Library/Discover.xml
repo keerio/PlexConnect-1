@@ -99,7 +99,7 @@
 
      <collectionDivider alignment="left" accessibilityLabel="On Deck">
        <title></title>
-     </collectionDivider>{{CUT(@OnDeck/Server/size:CUT:0=CUT|1=)}}
+     </collectionDivider>{{CUT(@main/size:CUT:0=CUT|1=CUT|1 =)}}
 
      <!--On Deck-->
      <__COPY__>
@@ -129,7 +129,7 @@
 
      <collectionDivider alignment="left" accessibilityLabel="On Deck">
        <title></title>
-     </collectionDivider>{{CUT(@OnDeck/Server/size:CUT:0=CUT|1=)}}
+     </collectionDivider>{{CUT(@RecentlyAdded/Server/size:CUT:0=CUT|1=)}}
 
      <!--Recently Added-->
      <__COPY__>
