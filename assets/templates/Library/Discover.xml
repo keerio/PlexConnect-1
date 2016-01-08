@@ -127,9 +127,6 @@
         </shelf>{{CUT(@OnDeck/Server/size:CUT:0=CUT|1=)}}
      </__COPY__>
 
-     <collectionDivider alignment="left" accessibilityLabel="On Deck">
-       <title></title>
-     </collectionDivider>{{CUT(@RecentlyAdded/Server/size:CUT:0=CUT|1=)}}
 
      <!--Recently Added-->
      <__COPY__>
@@ -158,9 +155,6 @@
       </shelf>{{CUT(@RecentlyAdded/Server/size:CUT:0=CUT|1=)}}
     </__COPY__>
 
-    <collectionDivider alignment="left" accessibilityLabel="On Deck">
-      <title></title>
-    </collectionDivider>{{CUT(@RecentlyAdded/Server/size:CUT:0=CUT|1=)}}
 
     <__COPY__>
     {{COPY(@RecentlyAdded/Server:size::0=|1=COPY)}}
