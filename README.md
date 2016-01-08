@@ -1,7 +1,7 @@
 # PlexConnect
 or: "Plex @ aTV - think different..."
 
-<a href="https://www.plexconnect.info">PlexConnect WebSite</a>
+<a href="https://plexconnect.info">PlexConnect WebSite</a>
 
 We all want the pleasure of Plex on the big screen - in this case driven by an AppleTV.
 Unfortunately there are officially no Apps allowed on AppleTV, most of the time a jailbreak is late (iOS 5.2?) or not available at all (aTV3).
