@@ -47,7 +47,7 @@
                <image>
                     {{URL(:/fanartcache/{{getBackground({{EVAL({\
                     'title'       : "{{VAL(title)}}",\
-                    'image'       : "{{VAL($sectionicons::Plex=Icons/flow/{{VAL(type)}}-flow-plex.png|Basic=Icons/flow/{{VAL(type)}}-flow.png|Fanart=Icons/flow/{{VAL(type)}}-flow-fanart.png|Custom=Icons//flow/custom/{{EVAL("{{VAL(title)}}".replace(' ', ''))}}-flow.png)}}",\
+                    'image'       : "{{VAL($sectionicons::Plex=Icons/flow/{{VAL(type)}}-flow-plex.png|Basic=Icons/flow/{{VAL(type)}}-flow.png|Fanart=Icons/flow/{{VAL(type)}}-flow-fanart.png|Custom=Icons/flow/custom/{{EVAL("{{VAL(title)}}".replace(' ', ''))}}-flow.png)}}",\
                     'resolution'  : "flow",\
                     'titleSize'   : "40",\
                     'anchorX'     : "center",\
