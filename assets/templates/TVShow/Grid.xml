@@ -4,9 +4,7 @@
   </head>
 
   <body>
-      {{VAR(items:NoKey:FALSE)}}
-
-    <scroller id="Show_Grid" volatile="true">
+    <scroller id="Show_Grid">
       <header>
           <imageHeader>
            <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=600|1080=900)}}, 0" required="true">
@@ -18,9 +16,7 @@
           </image>
           </imageHeader>
       </header>
-
       <items>
-
         <collectionDivider alignment="left" accessibilityLabel="TV Shows">
             <title>{{TEXT(All TV Shows)}} ({{VAL(size)}})</title>
         </collectionDivider>
@@ -47,13 +43,5 @@
 
       </items>
     </scroller>
-    {{CUT(#items::FALSE=CUT|TRUE=)}}  <!--CUT if no item added-->
-
-    <!--No Element Available-->
-    <dialog id="com.sample.error-dialog">
-    {{CUT(#items::FALSE=|TRUE=CUT)}}
-      <title>PlexConnect</title>
-      <description>{{TEXT(Plex Media Server: No Items Available)}}</description>
-    </dialog>
   </body>
 </atv>

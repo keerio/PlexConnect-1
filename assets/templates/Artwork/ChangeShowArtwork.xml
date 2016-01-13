@@ -1,73 +1,74 @@
 <atv>
-  <head>
-    <script src="{{URL(:/js/utils.js)}}" />
-  </head>
+    <head>
+        <script src="{{URL(:/js/utils.js)}}" />
+    </head>
 
-  <body>
-    <scroller id="Show_Bookcase">
-      <header>
-        <imageHeader>
-         <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=550|1080=825)}}, 0" required="true">
-        {{URL(:/fanartcache/{{getBackground({{EVAL({\
-            'title'       : "{{EVAL(quote_plus("{{VAL(title2)}}"))}}",\
-            'subtitle'    : "{{EVAL(quote_plus("{{TEXT(Select Poster)}}"))}}",\
-            'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
-            'layers'      : ["PlexSubGrid"]\
-            })}})}})}}
-        </image>
-        </imageHeader>
-      </header>
+    <body>
+        <scroller id="Show_Bookcase">
+          <header>
+            <imageHeader>
+             <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=550|1080=825)}}, 0" required="true">
+            {{URL(:/fanartcache/{{getBackground({{EVAL({\
+                'title'       : "{{EVAL(quote_plus("{{VAL(title2)}}"))}}",\
+                'subtitle'    : "{{EVAL(quote_plus("{{TEXT(Select Poster)}}"))}}",\
+                'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
+                'layers'      : ["PlexSubGrid"]\
+                })}})}})}}
+            </image>
+            </imageHeader>
+          </header>
 
-      <items>
-        <collectionDivider alignment="left" accessibilityLabel="Show_Bookcase_Divider">
-          <title>Main Show Art</title>
-        </collectionDivider>
+            {{ADDXML(posters::/library/metadata/{{VAL(key)}}/posters)}}
+            {{ADDXML(showPosters::/library/metadata/{{VAL(key)}}/posters)}}
+            {{VAR(key:key)}}
 
-        {{ADDXML(showPosters::/library/metadata/{{VAL(key)}}/posters)}}
-        {{VAR(key:key)}}
+            <items>
+                <collectionDivider alignment="left" accessibilityLabel="Show_Bookcase_Divider">
+                    <title>Main Show Art</title>
+                </collectionDivider>
 
-        <shelf id="Main_Show_Art" columnCount="7">
-          <sections>
-            <shelfSection>
-              <items>
-                <moviePoster related="true" id="{{VAL(key)}}" alwaysShowTitles="true"
-                             onSelect="changeArtwork('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(#key)}}', '{{VAL(key)}}', 'Main_Show_Art')">
-                  {{COPY(@showPosters/Photo)}}
-                  <title>{{VAL(selected::0=|1=Selected)}}</title>
-                  <image>{{IMAGEURL(thumb::384)}}</image>
-                  <defaultImage>resource://Poster.png</defaultImage>
-                </moviePoster>
-              </items>
-            </shelfSection>
-          </sections>
-        </shelf>
+                <shelf id="Main_Show_Art" columnCount="{{EVAL(min({{VAL(@posters/size:0)}},5))}}">
+                    <sections>
+                        <shelfSection>
+                            <items>
+                                <goldenPoster related="true" id="{{VAL(key)}}" alwaysShowTitles="true"
+                                    onSelect="changeArtwork('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(#key)}}', '{{VAL(key)}}', 'Main_Show_Art')">
+                                    {{COPY(@showPosters/Photo)}}
+                                    <title>{{VAL(selected::0=|1=Selected)}}</title>
+                                    <image>{{IMAGEURL(thumb::768)}}</image>
+                                    <defaultImage>resource://Poster.png</defaultImage>
+                                </goldenPoster>
+                            </items>
+                        </shelfSection>
+                    </sections>
+                </shelf>
 
-        <__COPY__>
-          {{COPY(Directory:title:COPY:=COPY|All Episodes=|S=COPY)}}
-          <collectionDivider alignment="left" accessibilityLabel="Show_Bookcase_Divider">
-            <title>{{VAL(title)}}</title>
-          </collectionDivider>
-          <shelf id="{{VAL(title)}}" columnCount="7">
-            <sections>
-              <shelfSection>
-                <items>
-                  {{ADDXML(seasonPoster::/library/metadata/{{VAL(ratingKey)}}/posters)}}
-                  {{VAR(ratingKey:ratingKey)}}
-                  {{VAR(size:@seasonPoster/size)}}
-                  {{VAR(title:title)}}
-                  <moviePoster related="true" id="{{VAL(key)}}" alwaysShowTitles="true"
-                               onSelect="changeArtwork('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(#ratingKey)}}', '{{VAL(key)}}', '{{VAL(#title)}}')">
-                    {{COPY(@seasonPoster/Photo)}}
-                    <title>{{VAL(selected::0=|1=Selected)}}</title>
-                    <image>{{IMAGEURL(thumb::384)}}</image>
-                    <defaultImage>resource://Poster.png</defaultImage>
-                  </moviePoster>
-                </items>
-              </shelfSection>
-            </sections>
-          </shelf>{{CUT(#size::0=CUT|1=)}}
-        </__COPY__>
-      </items>
-    </scroller>
-  </body>
+                <__COPY__>
+                    {{COPY(Directory:title:COPY:=COPY|All Episodes=|S=COPY)}}
+                    <collectionDivider alignment="left" accessibilityLabel="Show_Bookcase_Divider">
+                        <title>{{VAL(title)}}</title>
+                    </collectionDivider>
+                    <shelf id="{{VAL(title)}}" columnCount="{{EVAL(min({{VAL(@posters/size:0)}},5))}}">
+                        <sections>
+                            <shelfSection>
+                                <items>
+                                    {{ADDXML(seasonPoster::/library/metadata/{{VAL(ratingKey)}}/posters)}}
+                                    {{VAR(ratingKey:ratingKey)}}
+                                    {{VAR(size:@seasonPoster/size)}}
+                                    {{VAR(title:title)}}
+                                    <goldenPoster related="true" id="{{VAL(key)}}" alwaysShowTitles="true"
+                                        onSelect="changeArtwork('{{VAL(%baseURL)}}', '{{VAL(%accesstoken)}}', '{{VAL(#ratingKey)}}', '{{VAL(key)}}', '{{VAL(#title)}}')">
+                                        {{COPY(@seasonPoster/Photo)}}
+                                        <title>{{VAL(selected::0=|1=Selected)}}</title>
+                                        <image>{{IMAGEURL(thumb::768)}}</image>
+                                        <defaultImage>resource://Poster.png</defaultImage>
+                                    </goldenPoster>
+                                </items>
+                            </shelfSection>
+                        </sections>
+                    </shelf>{{CUT(#size::0=CUT|1=)}}
+                </__COPY__>
+            </items>
+        </scroller>
+    </body>
 </atv>

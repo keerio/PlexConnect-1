@@ -7,7 +7,7 @@ if( atv.Document ) {
             return elements[0];
         }
         return undefined;
-    }   
+    }
 }
 
 
@@ -32,7 +32,7 @@ if( atv.Element ) {
 if (!String.prototype.format) {
   String.prototype.format = function() {
     var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
+    return this.replace(/{(\d+)}/g, function(match, number) {
       return typeof args[number] != 'undefined' ? args[number] : match;
     });
   };
@@ -53,13 +53,13 @@ function log(msg, level)
 
 /*
  * Mark a item watched or unwatched
- * Pass action as scrobble or unscrobble 
+ * Pass action as scrobble or unscrobble
  */
 function markItem(PMS_baseURL, accessToken, ratingKey, action)
 {
   var url = PMS_baseURL + "/:/" + action + "?key=" + ratingKey + "&identifier=com.plexapp.plugins.library";
   if (accessToken!='') url = url + '&X-Plex-Token=' + accessToken;
-    
+
 	var req = new XMLHttpRequest();
 	req.open('GET', url, false);
 	req.send();
@@ -76,22 +76,24 @@ function changeArtwork(PMS_baseURL, accessToken, ratingKey, artURL, shelfName)
     var root = document.rootElement;
     var shelf = document.getElementById(shelfName);
     if (shelf == null) return;
-    var items = shelf.getElementsByTagName('moviePoster');
+    var items = shelf.getElementsByTagName('goldenPoster');
     if (items == null) return;
-  
+
     for (var i=0; i<items.length; i++)
     {
-      if (items[i].getAttribute('id') == artURL) 
+      if (items[i].getAttribute('id') == artURL)
       {
       items[i].getElementByTagName('title').textContent = "Selected";
       }
       else
-      { 
+      {
         items[i].getElementByTagName('title').textContent = "";
       }
     }
   }
+
   
+
   // Test if art is from library or external location
   if (artURL.indexOf('library') !== -1)
 	{
@@ -102,7 +104,7 @@ function changeArtwork(PMS_baseURL, accessToken, ratingKey, artURL, shelfName)
   {
     artURL = encodeURIComponent(artURL);
   }
-  
+
   if (shelfName != 'fanart')
   {
     var url = PMS_baseURL + "/library/metadata/" + ratingKey + "/poster?url=" + artURL;
@@ -112,7 +114,7 @@ function changeArtwork(PMS_baseURL, accessToken, ratingKey, artURL, shelfName)
     var url = PMS_baseURL + "/library/metadata/" + ratingKey + "/art?url=" + artURL;
   }
   if (accessToken!='') url = url + '&X-Plex-Token=' + accessToken;
-    
+
   var req = new XMLHttpRequest();
 	req.open('PUT', url, true);
 	req.send();
@@ -136,7 +138,7 @@ function changeArtwork(PMS_baseURL, accessToken, ratingKey, artURL, shelfName)
   {
     // firmware >=6.0
     // load scrobble menu xml
-    // parse the xml and build a popup context menu 
+    // parse the xml and build a popup context menu
     var url = url + "&PlexConnectUDID="+atv.device.udid
     var req = new XMLHttpRequest();
     req.onreadystatechange = function()
@@ -158,14 +160,14 @@ function changeArtwork(PMS_baseURL, accessToken, ratingKey, artURL, shelfName)
           }
           xmlDoc = atv.parseXML(xml);
           atv.contextMenu.load(xmlDoc);
-        } 
+        }
       }
       catch(e)
       {
         req.abort();
       }
     }
-    
+
     req.open('GET',unescape(url), false);
     req.send();
   }

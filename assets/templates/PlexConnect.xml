@@ -2,11 +2,11 @@
 <atv>
   <head>
     <script src="{{URL(:/js/utils.js)}}" />
-    <script src="{{URL(:/js/updateXML.js)}}" />
+    <script src="{{URL(:/js/handlePlexConnectNavbar.js)}}" />
   </head>
   <body>
     <viewWithNavigationBar id="PlexConnect_Navigation" onNavigate="loadMenuPage(event)"
-                           volatile="true" onVolatileReload="updatePage('{{URL()}}/PlexConnect.xml');">
+                           volatile="true" onVolatileReload="reloadNavbar(event);">
       {{VAR(ix::{{VAL($libraryview::=1|Hide={{VAL($sharedlibrariesview::=1|Hide=0|Hide =1)}}|Hide =1)}})}}  <!--1 if library or shared library to be shown-->
       <navigation currentIndex="{{VAL($playlistsview::={{VAL(#ix)}}|Hide=0|Hide ={{VAL(#ix)}})}}">
 
