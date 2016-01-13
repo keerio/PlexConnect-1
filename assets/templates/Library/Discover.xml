@@ -42,7 +42,7 @@
             <!-- /library/sections -->
             {{VAR(serverName:name)}}
             {{VAR(searchKey:searchKey)}}
-              <moviePoster id="{{VAL(key)}}" showOutline="true" alwaysShowTitles="true" featured="true"
+              <moviePoster id="{{VAL(key)}}" showOutline="{{VAL($sectionicons::Plex=false|Basic=true|Fanart=true|Custom=true)}}" alwaysShowTitles="true" featured="{{VAL($sectionicons::Plex=false|Basic=true|Fanart=true|Custom=true)}}"
                             onPlay="atv.loadURL('{{URL(key:::PlexConnect={{EVAL('{{VAL(scanner)}}'.replace(' ', '_'))}})}}')"
                             onSelect="atv.loadURL('{{URL(key:::PlexConnect={{EVAL('{{VAL(scanner)}}'.replace(' ', '_'))}})}}')"
                             onHoldSelect="sectionHoldSelect('{{VAL(key)}}', '{{URL(#searchKey)}}', '{{VAL(#serverName)}}', '{{URL(refreshKey)}}', '{{VAL(title)}}')">
@@ -53,7 +53,7 @@
               <image>{{URL(:/thumbnails/Images/Icons/grid/{{VAL(type)}}.png)}}</image>{{CUT($sectionicons::Basic=|Plex=CUT|Fanart=CUT|Custom=CUT)}}
               <image>{{IMAGEURL(thumb::768)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=|Fanart=CUT|Custom=CUT)}}
               <image>{{IMAGEURL(art::768)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=|Custom=CUT)}}
-              <image>{{URL(:/thumbnails/Images/Icons//grid/custom/{{VAL(title)}}".replace(' ', ''))}}.png)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=CUT|Custom=)}}
+              <image>{{URL(:/thumbnails/Images/Icons//grid/custom/{{EVAL("{{VAL(title)}}".replace(' ', ''))}}.png)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=CUT|Custom=)}}
               <defaultImage>resource://{{VAL($sectionicons::Plex=Square|Basic=16X9|Fanart=16X9|Custom=16X9)}}.png</defaultImage>
             </moviePoster>
               </items>
