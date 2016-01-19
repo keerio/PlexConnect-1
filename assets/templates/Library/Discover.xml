@@ -35,10 +35,8 @@
           <title>{{VAL(name)}}{{VAL(local::0= &quot;{{TEXT(remote)}}&quot;|0 =)}}</title>
         </collectionDivider>
 
-      <shelf id="shelf_0" columnCount="5">
-        <sections>
-          <shelfSection>
-            <items>
+        <grid id="Library_Grid" columnCount="5">
+          <items>
             <!-- /library/sections -->
             {{VAR(serverName:name)}}
             {{VAR(searchKey:searchKey)}}
@@ -49,7 +47,6 @@
               {{COPY(Directory)}}
               {{VAR(sections:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
               <title>{{VAL(title)}}</title>
-              <subtitle>&#x00AD;</subtitle><!--bugfix to prevent different poster sizes-->
               <image>{{URL(:/thumbnails/Images/Icons/grid/{{VAL(type)}}.png)}}</image>{{CUT($sectionicons::Basic=|Plex=CUT|Fanart=CUT|Custom=CUT)}}
               <image>{{IMAGEURL(thumb::768)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=|Fanart=CUT|Custom=CUT)}}
               <image>{{IMAGEURL(art::768)}}</image>{{CUT($sectionicons::Basic=CUT|Plex=CUT|Fanart=|Custom=CUT)}}
@@ -57,9 +54,7 @@
               <defaultImage>resource://{{VAL($sectionicons::Plex=Square|Basic=16X9|Fanart=16X9|Custom=16X9)}}.png</defaultImage>
             </moviePoster>
               </items>
-            </shelfSection>
-          </sections>
-        </shelf>
+            </grid>
      </__COPY__>
 
      <collectionDivider alignment="left" accessibilityLabel="Library">

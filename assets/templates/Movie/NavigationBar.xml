@@ -16,7 +16,7 @@
 				<navigationItem id="1">
 					<title>{{TEXT(All Movies)}}</title>
 					<url>{{URL(key::/all:PlexConnect=Movie_{{EVAL('{{VAL($movieview)}}'.replace(' ', ''))}})}}</url>
-				</navigationItem>{{CUT($movies_navbar_overview::Hide=|Show=CUT)}}
+				</navigationItem>{{CUT($movies_navbar_overview::Hide=|Show=CUT)}}{{CUT($movies_navbar_ondeck::Hide=CUT|Show=)}}
 
 				<navigationItem id="2">
 					<title>{{TEXT(On Deck)}}</title>
