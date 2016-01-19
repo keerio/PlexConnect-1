@@ -13,7 +13,7 @@
     <scroller id="Library_Discover" volatile="true" onVolatileReload="atv.loadAndSwapURL('{{URL(:::PlexConnect=Library_Discover)}}')">
       <header>
          <imageHeader>
-           <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=615|1080=920)}}, 0" required="true">
+           <image insets="0, 0, {{VAL(^aTVScreenResolution:1:720=625|1080=940)}}, 0" required="true">
                {{URL(:/fanartcache/{{getBackground({{EVAL({\
                'title'       : "{{SETTING(plexhome_user)}}",\
                'resolution'  : "{{VAL(^aTVScreenResolution)}}",\
