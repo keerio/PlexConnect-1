@@ -7,4 +7,4 @@ Version.py
 
 
 # Version string - globally available
-__VERSION__ = '0.5-Theme-190116'
+__VERSION__ = '0.5-dev-230116'
