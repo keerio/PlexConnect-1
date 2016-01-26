@@ -41,8 +41,7 @@
                             onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_MenuVideo)}}')">
                   {{COPY(@OnDeck/Video)}}
                   {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
-                  <title>{{VAL(title)}}</title>
-                  <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
+                  <title>{{VAL(title)}} ({{VAL(year)}})</title>
                   <image>{{IMAGEURL(thumb::768)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </goldenPoster>
@@ -69,8 +68,7 @@
                             onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_MenuVideo)}}')">
                   {{COPY(@RecentlyAdded/Video)}}
                   {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
-                  <title>{{VAL(title)}}</title>
-                  <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
+                  <title>{{VAL(title)}} ({{VAL(year)}})</title>
                   <image>{{IMAGEURL(thumb::768)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </goldenPoster>
@@ -97,8 +95,7 @@
                             onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_MenuVideo)}}')">
                   {{COPY(@RecentlyReleased/Video)}}
                   {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
-                  <title>{{VAL(title)}}</title>
-                  <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
+                  <title>{{VAL(title)}} ({{VAL(year)}})</title>
                   <image>{{IMAGEURL(thumb::768)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </goldenPoster>

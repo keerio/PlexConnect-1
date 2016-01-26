@@ -155,7 +155,6 @@
                              onSelect="atv.loadURL('{{URL(key:::PlexConnect=Movie_ByFolder)}}')">
               {{COPY(Directory)}}
               <title>{{VAL(title)}}</title>
-              <subtitle>{{VAL(year:&#x00AD;)}}</subtitle>
               <image>{{URL(:/thumbnails/Grpahics/Icons/Folder.png)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
             </goldenPoster>
