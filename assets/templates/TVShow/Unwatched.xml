@@ -28,7 +28,7 @@
                         onSelect="atv.loadURL('{{URL(key:::PlexConnect=TVShow_Season)}}')"
                         onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_MenuShow)}}')">
               {{COPY(Directory)}}
-              <title>{{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}} {{VAL(title)}}</title>
+              <title>{{VAL(title)}}</title>
               <image>{{IMAGEURL(thumb::768)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
               <badgeCount>{{unwatchedCountGrid(leafCount:0:viewedLeafCount:0)}}</badgeCount>{{CUT($showunwatched::False=CUT|True=)}}
