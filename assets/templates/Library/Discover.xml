@@ -80,7 +80,7 @@
                               onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_Menu)}}')">
                  {{COPY(Video)}}
                  <title>{{VAL(title)}} ({{VAL(year)}})</title>{{CUT(type:CUT:episode=CUT|movie=)}}
-                 <title>{{TEXT(Season)}} {{VAL(parentIndex)}} · {{TEXT(Episode)}} {{VAL(index)}}</title>{{CUT(type::episode=|movie=CUT)}}                <image>{{IMAGEURL({{VAL(type::movie=thumb|episode=grandparentThumb)}}::768)}}</image>
+                 <title>{{TEXT(Season)}} {{VAL(parentIndex)}} • {{TEXT(Episode)}} {{VAL(index)}}</title>{{CUT(type::episode=|movie=CUT)}}                <image>{{IMAGEURL({{VAL(type::movie=thumb|episode=grandparentThumb)}}::768)}}</image>
                  <defaultImage>resource://Poster.png</defaultImage>
                 </goldenPoster>
               </items>

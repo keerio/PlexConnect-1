@@ -43,7 +43,7 @@
                               {{COPY(@OnDeck/Video)}}
                               {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
                               <title>{{VAL(grandparentTitle)}}</title>
-                              <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}}</subtitle>
+                              <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} • {{TEXT(E)}}{{VAL(index)}}</subtitle>
                               <image>{{IMAGEURL(grandparentThumb::384)}}</image>
                               <defaultImage>resource://Poster.png</defaultImage>
                           </moviePoster>
@@ -68,7 +68,7 @@
                                     {{COPY(@recentlyAdded/Video)}}
                                     {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
                                     <title>{{VAL(title)}}</title>
-                                    <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}}</subtitle>
+                                    <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} • {{TEXT(E)}}{{VAL(index)}}</subtitle>
                                     <image>{{IMAGEURL(grandparentThumb::768)}}</image>
                                     <defaultImage>resource://Poster.png</defaultImage>
                                 </moviePoster>
@@ -93,7 +93,7 @@
                                     {{COPY(@newest/Video)}}
                                     {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
                                     <title>{{VAL(title)}}</title>
-                                    <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}}</subtitle>
+                                    <subtitle>{{TEXT(S)}}{{VAL(parentIndex)}} • {{TEXT(E)}}{{VAL(index)}}</subtitle>
                                     <image>{{IMAGEURL(grandparentThumb::768)}}</image>
                                     <defaultImage>resource://Poster.png</defaultImage>
                                 </moviePoster>

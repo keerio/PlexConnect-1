@@ -131,7 +131,7 @@
 
       <collectionDivider alignment="left" accessibilityLabel="On Deck">
       <title>{{TEXT(On Deck)}}</title>{{CUT(@main/size::1=|2=CUT)}}
-      <title>{{TEXT(On Deck)}} - {{VAL(name)}}{{VAL(local::0= &lt;{{TEXT(remote)}}&gt;|0 =)}}</title>{{CUT(@main/size:CUT:1=CUT|2=)}}
+      <title>{{TEXT(On Deck)}} • {{VAL(name)}}{{VAL(local::0= &lt;{{TEXT(remote)}}&gt;|0 =)}}</title>{{CUT(@main/size:CUT:1=CUT|2=)}}
       </collectionDivider>{{CUT(@OnDeck/Server/size:CUT:0=CUT|1=)}}{{CUT($library_ondeck::Show=|Hide=CUT)}}
 
       <shelf id="shelf_1" columnCount="7">
@@ -146,7 +146,7 @@
                   {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
                   <title>{{VAL(title)}}</title>{{CUT(type:CUT:episode=CUT|movie=)}}
                   <title>{{VAL(grandparentTitle)}}</title>{{CUT(type::episode=|movie=CUT)}}
-                  <subtitle>{{VAL(type::movie={{VAL(year)}}|episode={{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}} )}}</subtitle>
+                  <subtitle>{{VAL(type::movie={{VAL(year)}}|episode={{TEXT(S)}}{{VAL(parentIndex)}} • {{TEXT(E)}}{{VAL(index)}} )}}</subtitle>
                   <image>{{IMAGEURL({{VAL(type::movie=thumb|episode=grandparentThumb)}}::384)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </moviePoster>
@@ -162,7 +162,7 @@
 
          <collectionDivider alignment="left" accessibilityLabel="Recently Added">
            <title>{{TEXT(Recently Added)}}</title>{{CUT(@main/size::1=|2=CUT)}}
-           <title>{{TEXT(Recently Added)}} - {{VAL(name)}}{{VAL(local::0= &lt;{{TEXT(remote)}}&gt;|0 =)}}</title>{{CUT(@main/size:CUT:1=CUT|2=)}}
+           <title>{{TEXT(Recently Added)}} • {{VAL(name)}}{{VAL(local::0= &lt;{{TEXT(remote)}}&gt;|0 =)}}</title>{{CUT(@main/size:CUT:1=CUT|2=)}}
         </collectionDivider>{{CUT(@RecentlyAdded/Server/size:CUT:0=CUT|1=)}}{{CUT($library_recentlyadded::Show=|Hide=CUT)}}
 
         <shelf id="shelf_2" columnCount="7">

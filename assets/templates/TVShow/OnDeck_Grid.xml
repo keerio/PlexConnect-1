@@ -115,7 +115,7 @@
                             onHoldSelect="scrobbleMenu('{{URL(key:::PlexConnect=Scrobble_MenuTVOnDeck)}}')">
                   {{COPY(@RecentlyViewedEpisodes/Video,7,1)}}
                   {{VAR(items:NoKey:TRUE)}}  <!--within COPY this sets the var to TRUE-->
-                  <title>{{TEXT(S)}}{{VAL(parentIndex)}} · {{TEXT(E)}}{{VAL(index)}} - {{VAL(title)}}</title>
+                  <title>{{TEXT(S)}}{{VAL(parentIndex)}} • {{TEXT(E)}}{{VAL(index)}} - {{VAL(title)}}</title>
                   <image>{{IMAGEURL(grandparentThumb::384)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </goldenPoster>
