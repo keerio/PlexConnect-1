@@ -402,7 +402,7 @@ def XML_PMS2aTV(PMS_address, path, options):
                 auth_token = PlexAPI.getPMSProperty(UDID, PMS_uuid, 'accesstoken')
                 enableGzip = PlexAPI.getPMSProperty(UDID, PMS_uuid, 'enableGzip')
                 PMS = PlexAPI.getXMLFromPMS(PMS_baseURL, path, options, auth_token, enableGzip)
-                
+
             if PMS==False:
                 return XML_Error('PlexConnect', 'No Response from Plex Media Server')
 
