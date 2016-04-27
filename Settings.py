@@ -16,6 +16,7 @@ syntax: 'setting': ('default', 'regex to validate')
 PMS: plexgdm, ip_pms, port_pms
 DNS: ip_dnsmaster - IP of Router, ISP's DNS, ... [dflt: google public DNS]
 IP_self: enable_plexconnect_autodetect, ip_plexconnect - manual override for VPN usage
+IP_external: enable_plexconnect_autodetect_external, ip_plexconnect_external - manual override for VPN usage
 Intercept: Trailers-trailers.apple.com, WSJ-secure.marketwatch.com, iMovie-www.icloud.com
 HTTP: port_webserver - override when using webserver + forwarding to PlexConnect
 HTTPS: port_ssl, certfile, enable_webserver_ssl - configure SSL portion or webserver
@@ -34,6 +35,8 @@ g_settings = [
     \
     ('enable_plexconnect_autodetect', ('True', '((True)|(False))')),
     ('ip_plexconnect'  , ('0.0.0.0', '([0-9]{1,3}\.){3}[0-9]{1,3}')),
+    ('enable_plexconnect_autodetect_external', ('True', '((True)|(False))')),
+    ('ip_plexconnect_external', ('0.0.0.0', '([0-9]{1,3}\.){3}[0-9]{1,3}')),
     ('hosttointercept' , ('www.icloud.com', '[a-zA-Z0-9_.-]+')),
     \
     ('port_webserver'  , ('80', '[0-9]{1,5}')),

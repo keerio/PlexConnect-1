@@ -22,11 +22,10 @@ from PILBackgrounds import isPILinstalled
 from Debug import *  # dprint()
 
 
-
 def getIP_self():
     cfg = param['CSettings']
     if cfg.getSetting('enable_plexconnect_autodetect')=='True':
-        # get public ip of machine running PlexConnect
+        # get interface ip of machine running PlexConnect
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(('1.2.3.4', 1000))
         IP = s.getsockname()[0]
@@ -35,16 +34,27 @@ def getIP_self():
         # manual override from "settings.cfg"
         IP = cfg.getSetting('ip_plexconnect')
         dprint('PlexConnect', 0, "IP_self (from settings): "+IP)
-    
+
     return IP
 
-
+def getIP_external():
+    cfg = param['CSettings']
+    if cfg.getSetting('enable_plexconnect_autodetect_external')=='True':
+        # get external ip of machine running PlexConnect
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(('1.2.3.4', 1000))
+        IP = s.getsockname()[0]
+        dprint('PlexConnect', 0, "IP_external: "+IP)
+    else:
+        # manual override from "settings.cfg"
+        IP = cfg.getSetting('ip_plexconnect_external')
+        dprint('PlexConnect', 0, "IP_external (from settings): "+IP)
+    
+    return IP
 
 # initializer for Manager, proxy-ing ATVSettings to WebServer/XMLConverter
 def initProxy():
     signal.signal(signal.SIGINT, signal.SIG_IGN)
-
-
 
 procs = {}
 pipes = {}
@@ -80,6 +90,7 @@ def startup():
     
     # more Settings
     param['IP_self'] = getIP_self()
+    param['IP_external'] = getIP_external()
     param['HostToIntercept'] = cfg.getSetting('hosttointercept')
     param['baseURL'] = 'http://'+ param['HostToIntercept']
     
@@ -168,12 +179,9 @@ def cmdShutdown():
         pipes[slave].send('shutdown')
     dprint('PlexConnect', 0, "Shutting down.")
 
-
-
 def sighandler_shutdown(signum, frame):
     signal.signal(signal.SIGINT, signal.SIG_IGN)  # we heard you!
     cmdShutdown()
-
 
 
 if __name__=="__main__":
