@@ -26,7 +26,7 @@ LABEL org.freenas.interactive="false" \
           {								\
               \"env\": \"TZ\",						\
               \"descr\": \"Timezone information, eg Europe/London\",	\
-              \"ip_pms"\: \"wut\",                                      \
+              \"ip_pms\": \"wut\"   \
               \"optional\": true					\
           }								\
       ]"
